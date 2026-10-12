@@ -115,8 +115,8 @@ export default function Page() {
       <button onClick={() => setSort(k)} className="inline-flex items-center gap-1 hover:text-stone-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">{children}{sortKey === k && <span aria-hidden>{dir === 'asc' ? '↑' : '↓'}</span>}</button>
     </th>
   );
-  const Area = ({ id, label, hint }: { id: keyof Criteria; label: string; hint?: string }) => (
-    <div>
+  const area = (id: keyof Criteria, label: string, hint?: string) => (
+    <div key={id}>
       <label htmlFor={id} className="mb-1 block text-sm font-medium">{label}</label>
       <textarea id={id} rows={id === 'custom' ? 3 : 2} className={input} value={criteria[id]} placeholder={hint} onChange={(e) => setCriteria({ ...criteria, [id]: e.target.value })} />
     </div>
@@ -193,17 +193,19 @@ export default function Page() {
             <h2 className="text-lg font-semibold">Your ideal network</h2>
             <p className="mb-4 text-sm text-stone-600">Pre-filled with an example for a GTM Engineer. Edit freely; every field is optional.</p>
             <div className="grid gap-4 md:grid-cols-2">
-              <Area id="titles" label="Target job titles" /><Area id="industries" label="Target industries" />
-              <Area id="companies" label="Target companies or company types" /><Area id="keep" label="People to keep" />
-              <Area id="lessRelevant" label="Less relevant connection types" />
-              <Area id="custom" label="Custom instructions" hint="Anything else Jev should know" />
+              {area('titles', 'Target job titles')}
+              {area('industries', 'Target industries')}
+              {area('companies', 'Target companies or company types')}
+              {area('keep', 'People to keep')}
+              {area('lessRelevant', 'Less relevant connection types')}
+              {area('custom', 'Custom instructions', 'Anything else Jev should know')}
             </div>
           </div>
 
           <fieldset className="rounded-2xl border border-stone-200 bg-white p-6 text-sm">
             <legend className="px-1 font-semibold">Analysis engine</legend>
             <label className="flex items-start gap-2"><input type="radio" name="mode" checked={mode === 'demo'} onChange={() => setMode('demo')} className="mt-1" /><span><b>Demo mode</b> – transparent keyword scoring on this app’s own server. No external AI service is contacted.</span></label>
-            <label className="mt-3 flex items-start gap-2"><input type="radio" name="mode" checked={mode === 'jev'} onChange={() => setMode('jev')} className="mt-1" /><span><b>Jev</b> – requires server credentials; the Jev adapter is not implemented yet (see README).</span></label>
+            <label className="mt-3 flex items-start gap-2"><input type="radio" name="mode" checked={mode === 'jev'} onChange={() => setMode('jev')} className="mt-1" /><span><b>Jev</b> – uses TypeSafe's Jev API. Needs JEV_API_KEY in .env.local.</span></label>
             {mode === 'jev' && <label className="mt-3 flex items-start gap-2 rounded-lg bg-amber-50 p-3"><input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1" /><span>I understand my connections’ names, companies, positions and profile URLs will be sent to an external AI service.</span></label>}
           </fieldset>
 
