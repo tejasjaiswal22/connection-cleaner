@@ -1,0 +1,19 @@
+Notes:
+"When exporting your connection data, you may notice that some of the email addresses are missing."
+
+First Name,Last Name,URL,Email Address,Company,Position,Connected On
+Maya,Patel,https://www.linkedin.com/in/maya-patel,,Clayworks,GTM Engineer,01 Sep 2025
+Daniel,Okafor,https://www.linkedin.com/in/daniel-okafor,,Northbeam Labs,Founder & CEO,12 Aug 2025
+Sofia,Reyes,https://www.linkedin.com/in/sofia-reyes,,TalentBridge,Technical Recruiter,03 Jul 2025
+Liam,Chen,https://www.linkedin.com/in/liam-chen,,Stackly,VP Sales,22 Jun 2025
+Priya,Nair,https://www.linkedin.com/in/priya-nair,,OutboundOS,Head of Revenue Operations,15 May 2025
+Tom,Becker,https://www.linkedin.com/in/tom-becker,,LuxeTimes,Luxury Watch Dealer,10 Apr 2024
+Anna,Kowalski,https://www.linkedin.com/in/anna-kowalski,,FitLife Network,MLM Distributor,02 Mar 2024
+Raj,Mehta,https://www.linkedin.com/in/raj-mehta,,CryptoMoon,Crypto Trader,19 Jan 2024
+Elena,Garcia,https://www.linkedin.com/in/elena-garcia,,,Student,07 Dec 2023
+Chris,Walker,https://www.linkedin.com/in/chris-walker,,Cedar Insurance,Insurance Agent,30 Nov 2023
+"Hannah, M.",Lee,https://www.linkedin.com/in/hannah-lee,hannah@example.com,Pipelinr,"Account Executive, SaaS",14 Oct 2023
+Maya,Patel,https://www.linkedin.com/in/maya-patel,,Clayworks,GTM Engineer,01 Sep 2025
+Omar,Haddad,https://www.linkedin.com/in/omar-haddad,,Lumen Health,Marketing Manager,05 Sep 2023
+Julia,Novak,https://www.linkedin.com/in/julia-novak,,Seedstage VC,Venture Partner,20 Aug 2023
+=Evil,Formula,,,HackCo,"=HYPERLINK(""http://x"")",01 Jan 2023
